@@ -1,15 +1,39 @@
 [
   {
-    "name": "Dr. Doom"
+    "name": "Dr. Doom",
+    "expansion": ""
   },
   {
-    "name": "Loki"
+    "name": "Loki",
+    "expansion": ""
   },
   {
-    "name": "Magneto"
+    "name": "Magneto",
+    "expansion": ""
   },
   {
-    "name": "Red Skull"
+    "name": "Red Skull",
+    "expansion": ""
+  },
+  {
+    "name": "Apocalypse",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Kingpin",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Mephisto",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Mr. Sinister",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Stryfe",
+    "expansion": "Dark City"
   }
 ]
 

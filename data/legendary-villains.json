@@ -1,24 +1,55 @@
 [
   {
-    "name": "Brotherhood"
+    "name": "Brotherhood",
+    "expansion": ""
   },
   {
-    "name": "Enemies of Asgard"
+    "name": "Enemies of Asgard",
+    "expansion": ""
   },
   {
-    "name": "Hydra"
+    "name": "Hydra",
+    "expansion": ""
   },
   {
-    "name": "Masters of Evil"
+    "name": "Masters of Evil",
+    "expansion": ""
   },
   {
-    "name": "Radiation"
+    "name": "Radiation",
+    "expansion": ""
   },
   {
-    "name": "Skrulls"
+    "name": "Skrulls",
+    "expansion": ""
   },
   {
-    "name": "Spider Foes"
+    "name": "Spider Foes",
+    "expansion": ""
+  },
+  {
+    "name": "Emissaries of Evil",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Four Horsemen",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Marauders",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "MLF",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Streets of New York",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Underworld",
+    "expansion": "Dark City"
   }
 ]
 

@@ -1,27 +1,67 @@
 [
   {
-    "name": "The Legacy Virus"
+    "name": "The Legacy Virus",
+    "expansion": ""
   },
   {
-    "name": "Midtown Bank Robbery"
+    "name": "Midtown Bank Robbery",
+    "expansion": ""
   },
   {
-    "name": "Negative Zone Prison Breakout"
+    "name": "Negative Zone Prison Breakout",
+    "expansion": ""
   },
   {
-    "name": "Portals to the Dark Dimension"
+    "name": "Portals to the Dark Dimension",
+    "expansion": ""
   },
   {
-    "name": "Replace Earth's Leaders with Killbots"
+    "name": "Replace Earth's Leaders with Killbots",
+    "expansion": ""
   },
   {
-    "name": "Secret Invasion of the Skrull Shapeshifters"
+    "name": "Secret Invasion of the Skrull Shapeshifters",
+    "expansion": ""
   },
   {
-    "name": "Super Hero Civil War"
+    "name": "Super Hero Civil War",
+    "expansion": ""
   },
   {
-    "name": "Unleash the Power of the Cosmic Cube"
-  }
+    "name": "Unleash the Power of the Cosmic Cube",
+    "expansion": ""
+  },
+  {
+    "name": "Capture Baby Hope",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Detonate the Helicarrier",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Massive Earthquake Generator",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Organized Crimewave",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Save Humanity",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Steal the Weaponized Plutonium",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Transform Citizens into Demons",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "X-Cutioner's Song",
+    "expansion": "Dark City"
+  },
 ]
 

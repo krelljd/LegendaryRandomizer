@@ -7,6 +7,13 @@ app.service('Marvel', function () {
    $scope.heroes = res.data;
    });*/
 
+  Marvel.expansions = {};
+  Marvel.expansions.darkcity =
+  {
+    "name": "Dark City",
+    "available": false
+  };
+
   Marvel.heroes = {};
   Marvel.heroes.available =
     [
@@ -14,7 +21,7 @@ app.service('Marvel', function () {
         "name": "Black Widow",
         "expansion": ""
       },
-      {         
+      {
         "name": "Captain America",
         "expansion": ""
       },
@@ -69,6 +76,74 @@ app.service('Marvel', function () {
       {
         "name": "Wolverine",
         "expansion": ""
+      },
+      {
+        "name": "Angel",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Bishop",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Blade",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Cable",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Colossus",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Daredevil",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Domino",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Elektra",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Forge",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Ghost Rider",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Iceman",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Iron Fist",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Jean Grey",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Nightcrawler",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Professor X",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "The Punisher",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Wolverine",
+        "expansion": "Dark City"
       }
     ];
   Marvel.heroes.selected = [];
@@ -92,6 +167,26 @@ app.service('Marvel', function () {
       {
         "name": "Red Skull",
         "expansion": ""
+      },
+      {
+        "name": "Apocalypse",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Kingpin",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Mephisto",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Mr. Sinister",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Stryfe",
+        "expansion": "Dark City"
       }
     ];
   Marvel.masterminds.selected = [];
@@ -131,6 +226,38 @@ app.service('Marvel', function () {
       {
         "name": "Unleash the Power of the Cosmic Cube",
         "expansion": ""
+      },
+      {
+        "name": "Capture Baby Hope",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Detonate the Helicarrier",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Massive Earthquake Generator",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Organized Crimewave",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Save Humanity",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Steal the Weaponized Plutonium",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Transform Citizens into Demons",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "X-Cutioner's Song",
+        "expansion": "Dark City"
       }
     ];
   Marvel.schemes.selected = [];
@@ -166,6 +293,30 @@ app.service('Marvel', function () {
       {
         "name": "Spider Foes",
         "expansion": ""
+      },
+      {
+        "name": "Emissaries of Evil",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Four Horsemen",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Marauders",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "MLF",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Streets of New York",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Underworld",
+        "expansion": "Dark City"
       }
     ];
   Marvel.villains.selected = [];
@@ -189,62 +340,72 @@ app.service('Marvel', function () {
       {
         "name": "Savage Land Mutates",
         "expansion": ""
+      },
+      {
+        "name": "Maggia Goons",
+        "expansion": "Dark City"
+      },
+      {
+        "name": "Phalanx",
+        "expansion": "Dark City"
       }
     ];
   Marvel.henchmen.selected = [];
   Marvel.henchmen.maxAllowed = 2;
 
   return Marvel;
-})
+});
 
 app.factory('Helper', function () {
 
   return {
-    addSelected: function (item, available, selected, maxAllowed) {
+    addSelected: function (item, list) {
       // cannot select more than n selectedItems
-      if (selected.length >= maxAllowed) {
+      if (list.selected.length >= list.maxAllowed) {
         return;
       }
-      var index = available.indexOf(item);
+      var index = list.available.indexOf(item);
       if (index > -1) {
-        available.splice(index, 1);
-        selected.push(item);
+        list.available.splice(index, 1);
+        list.selected.push(item);
       }
     },
 
-    removeSelected: function (item, available, selected) {
-      var index = selected.indexOf(item);
+    removeSelected: function (item, list) {
+      var index = list.selected.indexOf(item);
       if (index > -1) {
-        selected.splice(index, 1);
-        available.push(item);
+        list.selected.splice(index, 1);
+        list.available.push(item);
       }
     },
 
-    addSelectedByIndex: function (index, available, selected, maxAllowed) {
-      // cannot select more than n selectedItems
-      if (selected.length >= maxAllowed) {
-        return;
-      }
-      if (index > -1) {
-        var item = available[index];
-        selected.push(item);
-        available.splice(index, 1);
-      }
-    },
+//    addSelectedByIndex: function (index, list) {
+//      // cannot select more than n selectedItems
+//      if (list.selected.length >= list.maxAllowed) {
+//        return;
+//      }
+//      if (index > -1) {
+//        var item = list.available[index];
+//        list.selected.push(item);
+//        list.available.splice(index, 1);
+//      }
+//    },
 
     getRandomInt: function (min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
 
     removeAll: function (Marvel) {
-      this.removeAllSelected(Marvel.heroes);
-      this.removeAllSelected(Marvel.masterminds);
-      this.removeAllSelected(Marvel.schemes);
-      this.removeAllSelected(Marvel.villains);
-      this.removeAllSelected(Marvel.henchmen);
-    },
+      for (var list in Marvel) {
+        if (Marvel.hasOwnProperty(list)) {
+          removeAllSelected(Marvel[list]);
+        }
+      }
+    }
+  };
 
-    removeAllSelected: function (list) {
+  function removeAllSelected(list) {
+    if (list.hasOwnProperty('selected') && list.hasOwnProperty('available')) {
       for (var i = list.selected.length; i--; i > 0) {
         var item = list.selected[i];
         list.available.push(item);
@@ -252,4 +413,4 @@ app.factory('Helper', function () {
       }
     }
   }
-})
+});

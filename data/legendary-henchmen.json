@@ -1,14 +1,26 @@
 [
   {
-    "name": "Doombot Legion"
+    "name": "Doombot Legion",
+    "expansion": ""
   },
   {
-    "name": "Hand Ninjas"
+    "name": "Hand Ninjas",
+    "expansion": ""
   },
   {
-    "name": "Sentinels"
+    "name": "Sentinels",
+    "expansion": ""
   },
   {
-    "name": "Savage Land Mutates"
+    "name": "Savage Land Mutates",
+    "expansion": ""
+  },
+  {
+    "name": "Maggia Goons",
+    "expansion": "Dark City"
+  },
+  {
+    "name": "Phalanx",
+    "expansion": "Dark City"
   }
 ]
