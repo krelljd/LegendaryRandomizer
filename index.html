@@ -11,12 +11,16 @@
 <h1>Marvel Legendary</h1>
 
 <div class="container-fluid">
-  <form class="form-inline">
-    <strong>Expansions: &nbsp;</strong>
-    <label class="checkbox inline" ng-repeat="expansion in expansions">
-      <input type="checkbox" ng-click="toggleExpansion(expansion)"> {{ expansion.name }}
-    </label>
-  </form>
+  <div>
+    <h3 class="expansions">expansions&nbsp;</h3>
+      <span ng-repeat="expansion in expansions">
+        <button type="button" class="btn" ng-model="expansion.available"
+                ng-click="toggleExpansion(expansion)"
+                ng-class="{'btn' : expansion.available == false,
+                           'btn btn-inverse' : expansion.available == true}">{{expansion.name}}</button>
+      </span>
+  </div>
+  </br>
 
   <button class="btn btn-inverse btn-block" ng-click="randomizeAll()">
     <i class="icon-white icon-random"></i> Choose All

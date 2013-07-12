@@ -23,3 +23,9 @@
 td.right {
   text-align: right !important;
 }
+
+h3.expansions {
+  display: inline-block !important;
+  padding-top: 0px;
+  padding-bottom: 0;
+}
