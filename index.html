@@ -17,7 +17,10 @@
       <button type="button" class="btn" ng-model="expansion.available"
               ng-click="toggleExpansion(expansion)"
               ng-class="{'btn' : expansion.available == false,
-                         'btn btn-inverse' : expansion.available == true}">{{expansion.name}}</button>
+                         'btn btn-inverse' : expansion.available == true}">
+        <i ng-class="{'icon icon-lock' : expansion.available == false,
+                      'icon-white icon-ok' : expansion.available == true}"></i>
+        {{expansion.name}}</button>
     </span>
   </div>
   <br/>
