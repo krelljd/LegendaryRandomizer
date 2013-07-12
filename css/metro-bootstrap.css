@@ -1695,6 +1695,9 @@ table {
 .table .table {
   background-color: #ffffff;
 }
+.table-selected {
+  background-color: #e9fae2;
+}
 .table-condensed th,
 .table-condensed td {
   padding: 4px 5px;
