@@ -68,7 +68,7 @@
         </tr>
         <tr ng-repeat="mastermind in masterminds.available | orderBy: 'name' | filter:filterExpansions"
             ng-animate="'fade'">
-          <td ng-click="removeItem(mastermind, 'masterminds')">{{mastermind.name}}</td>
+          <td ng-click="selectItem(mastermind, 'masterminds')">{{mastermind.name}}</td>
           <td class="right">
             <span class="label">{{ mastermind.expansion }}</span>
           </td>
