@@ -3,44 +3,49 @@
 <head>
   <title>Marvel Legendary Game Setup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap-responsive.css">
   <link rel="stylesheet" href="css/metro-bootstrap.css">
   <link rel="stylesheet" href="css/fade.css">
 </head>
 <body ng-app="app" ng-controller="MarvelCtrl">
-  <h1>Marvel Legendary</h1>
+<h1>Marvel Legendary</h1>
 
+<div class="container-fluid">
   <form class="form-inline">
     <strong>Expansions: &nbsp;</strong>
-    <label class="checkbox" ng-repeat="expansion in expansions">
+    <label class="checkbox inline" ng-repeat="expansion in expansions">
       <input type="checkbox" ng-click="toggleExpansion(expansion)"> {{ expansion.name }}
     </label>
   </form>
 
   <button class="btn btn-inverse btn-block" ng-click="randomizeAll()">
-    <i class="icon-white icon-random"></i> Choose All</button>
+    <i class="icon-white icon-random"></i> Choose All
+  </button>
 
-  <div class="row">
+  <div class="row-fluid">
     <h2 class="span12">Schemes</h2>
 
-    <div class="span8">
+    <div class="span5">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Available</th>
         </tr>
         <tr ng-repeat="scheme in schemes.available | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="selectItem(scheme, 'schemes')">{{scheme.name}}</td>
-          <td><span class="label">{{ scheme.expansion }}</span></td>
+          <td class="right">
+            <span class="label">{{ scheme.expansion }}</span>
+          </td>
         </tr>
       </table>
     </div>
-    <div class="span4">
+    <div class="span6">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Selected</th>
         </tr>
         <tr ng-repeat="scheme in schemes.selected | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="removeItem(scheme, 'schemes')">{{scheme.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ scheme.expansion }}</span>
           </td>
         </tr>
@@ -49,156 +54,164 @@
     <button class="btn btn-block"
             ng-class="{'disabled btn-inverse' : schemes.selected.length === schemes.maxAllowed,
                        'btn-primary' : schemes.selected.length < schemes.maxAllowed}"
-            ng-click="selectRandomItems('schemes')"><i class="icon-white icon-random"></i> Choose Scheme</button>
+            ng-click="selectRandomItems('schemes')"><i class="icon-white icon-random"></i> Choose Scheme
+    </button>
   </div>
 
-  <div class="row">
+  <div class="row-fluid">
     <h2 class="span12">Masterminds</h2>
 
-    <div class="span8">
+    <div class="span5">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Available</th>
         </tr>
-        <tr ng-repeat="mastermind in masterminds.available | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
+        <tr ng-repeat="mastermind in masterminds.available | orderBy: 'name' | filter:filterExpansions"
+            ng-animate="'fade'">
           <td ng-click="removeItem(mastermind, 'masterminds')">{{mastermind.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ mastermind.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
-    <div class="span4">
+    <div class="span6">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Selected</th>
         </tr>
-        <tr ng-repeat="mastermind in masterminds.selected | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
+        <tr ng-repeat="mastermind in masterminds.selected | orderBy: 'name' | filter:filterExpansions"
+            ng-animate="'fade'">
           <td ng-click="removeItem(mastermind, 'masterminds')">{{mastermind.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ mastermind.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
     <button class="btn btn-block"
-            ng-class="{'disabled' : masterminds.selected.length === masterminds.maxAllowed,
+            ng-class="{'disabled btn-inverse' : masterminds.selected.length === masterminds.maxAllowed,
                        'btn-primary' : masterminds.selected.length < masterminds.maxAllowed}"
-            ng-click="selectRandomItems('masterminds')"><i class="icon-white icon-random"></i> Choose Mastermind</button>
+            ng-click="selectRandomItems('masterminds')"><i class="icon-white icon-random"></i> Choose Mastermind
+    </button>
   </div>
 
-  <div class="row">
+  <div class="row-fluid">
     <h2 class="span12">Heroes</h2>
 
-    <div class="span8">
+    <div class="span5">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Available</th>
         </tr>
         <tr ng-repeat="hero in heroes.available | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="selectItem(hero, 'heroes')">{{hero.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ hero.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
-    <div class="span4">
+    <div class="span6">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Selected</th>
         </tr>
         <tr ng-repeat="hero in heroes.selected | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="removeItem(hero, 'heroes')">{{hero.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ hero.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
     <button class="btn btn-block"
-            ng-class="{'disabled' : heroes.selected.length === heroes.maxAllowed,
+            ng-class="{'disabled btn-inverse' : heroes.selected.length === heroes.maxAllowed,
                        'btn-primary' : heroes.selected.length < heroes.maxAllowed}"
-            ng-click="selectRandomItems('heroes')"><i class="icon-white icon-random"></i> Choose Heroes</button>
+            ng-click="selectRandomItems('heroes')"><i class="icon-white icon-random"></i> Choose Heroes
+    </button>
   </div>
 
-  <div class="row">
+  <div class="row-fluid">
     <h2 class="span12">Villain Groups</h2>
 
-    <div class="span8">
+    <div class="span5">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Available</th>
         </tr>
         <tr ng-repeat="villain in villains.available | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="selectItem(villain, 'villains')">{{villain.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ villain.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
-    <div class="span4">
+    <div class="span6">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Selected</th>
         </tr>
         <tr ng-repeat="villain in villains.selected | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="removeItem(villain, 'villains')">{{villain.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ villain.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
     <button class="btn btn-block"
-            ng-class="{'disabled' : villains.selected.length === villains.maxAllowed,
+            ng-class="{'disabled btn-inverse' : villains.selected.length === villains.maxAllowed,
                        'btn-primary' : villains.selected.length < villains.maxAllowed}"
-            ng-click="selectRandomItems('villains')"><i class="icon-white icon-random"></i> Choose Villain Groups</button>
+            ng-click="selectRandomItems('villains')"><i class="icon-white icon-random"></i> Choose Villain Groups
+    </button>
   </div>
 
-  <div class="row">
+  <div class="row-fluid">
     <h2 class="span12">Henchmen Groups</h2>
 
-    <div class="span8">
+    <div class="span5">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Available</th>
         </tr>
         <tr ng-repeat="henchman in henchmen.available | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="selectItem(henchman, 'henchmen')">{{henchman.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ henchman.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
-    <div class="span4">
+    <div class="span6">
       <table class="table table-striped table-hover">
         <tr>
           <th colspan="2">Selected</th>
         </tr>
         <tr ng-repeat="henchman in henchmen.selected | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
           <td ng-click="removeItem(henchman, 'henchmen')">{{henchman.name}}</td>
-          <td>
+          <td class="right">
             <span class="label">{{ henchman.expansion }}</span>
           </td>
         </tr>
       </table>
     </div>
     <button class="btn btn-block"
-            ng-class="{'disabled' : henchmen.selected.length === henchmen.maxAllowed,
+            ng-class="{'disabled btn-inverse' : henchmen.selected.length === henchmen.maxAllowed,
                        'btn-primary' : henchmen.selected.length < henchmen.maxAllowed}"
-            ng-click="selectRandomItems('henchmen')"><i class="icon-white icon-random"></i> Choose Henchmen Groups</button>
+            ng-click="selectRandomItems('henchmen')"><i class="icon-white icon-random"></i> Choose Henchmen Groups
+    </button>
   </div>
   <br/>
   <button class="btn btn-large btn-danger btn-block" ng-click="removeAll()">Remove All</button>
   <br/>
+</div>
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/service.js"></script>
-  <script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/service.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
 </body>
 </html>

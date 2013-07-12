@@ -379,18 +379,6 @@ app.factory('Helper', function () {
       }
     },
 
-//    addSelectedByIndex: function (index, list) {
-//      // cannot select more than n selectedItems
-//      if (list.selected.length >= list.maxAllowed) {
-//        return;
-//      }
-//      if (index > -1) {
-//        var item = list.available[index];
-//        list.selected.push(item);
-//        list.available.splice(index, 1);
-//      }
-//    },
-
     getRandomInt: function (min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
