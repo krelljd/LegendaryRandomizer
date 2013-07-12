@@ -1676,6 +1676,7 @@ table {
 }
 .table th {
   font-weight: bold;
+  text-align: center;
 }
 .table thead th {
   vertical-align: bottom;
@@ -1781,6 +1782,14 @@ table {
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
   background-color: #f5f5f5;
+}
+.table-striped-selected tbody > tr:nth-child(odd) > td,
+.table-striped-selected tbody > tr:nth-child(odd) > th {
+  background-color: #dff0d8;
+}
+.table-hover-selected tbody tr:hover td,
+.table-hover-selected tbody tr:hover th {
+  background-color: #d0e1c9;
 }
 table td[class*="span"],
 table th[class*="span"],

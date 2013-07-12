@@ -1,7 +1,7 @@
 .fade-enter {
-  -webkit-transition: .5s linear all; /* Chrome */
-  -moz-transition: .5s linear all;
-  transition: .5s linear all;
+  -webkit-transition: .3s linear all; /* Chrome */
+  -moz-transition: .3s linear all;
+  transition: .3s linear all;
   opacity: 0;
 }
 
@@ -10,9 +10,9 @@
 }
 
 .fade-leave {
-  -webkit-transition: .5s linear all; /* Chrome */
-  -moz-transition: .5s linear all;
-  transition: .5s linear all;
+  -webkit-transition: .3s linear all; /* Chrome */
+  -moz-transition: .3s linear all;
+  transition: .3s linear all;
   opacity: 1;
 }
 
@@ -26,6 +26,6 @@ td.right {
 
 h3.expansions {
   display: inline-block !important;
-  padding-top: 0px;
+  padding-top: 0;
   padding-bottom: 0;
 }
