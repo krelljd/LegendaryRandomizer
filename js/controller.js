@@ -1,6 +1,8 @@
 app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   // expansions
+  $scope.playerCount = Marvel.playerCount;
   $scope.expansions = Marvel.expansions;
+  $scope.bystanders = Marvel.bystanders;
 
   $scope.schemes = Marvel.schemes;
   $scope.masterminds = Marvel.masterminds;
@@ -62,4 +64,40 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
     item.available = !item.available;
     $scope.removeAll();
   };
+
+  $scope.togglePlayerCount = function (item) {
+    $scope.playerCount.selected = item;
+    $scope.removeAll();
+    $scope.updateDecks();
+  };
+
+  $scope.updateDecks = function () {
+    var playerCount = $scope.playerCount.selected;
+    switch (playerCount) {
+      case 2:
+        $scope.heroes.maxAllowed = 5;
+        $scope.villains.maxAllowed = 2;
+        $scope.henchmen.maxAllowed = 1;
+        $scope.bystanders.maxAllowed = 2;
+        break;
+      case 3:
+        $scope.heroes.maxAllowed = 5;
+        $scope.villains.maxAllowed = 3;
+        $scope.henchmen.maxAllowed = 1;
+        $scope.bystanders.maxAllowed = 8;
+        break;
+      case 4:
+        $scope.heroes.maxAllowed = 5;
+        $scope.villains.maxAllowed = 3;
+        $scope.henchmen.maxAllowed = 2;
+        $scope.bystanders.maxAllowed = 8;
+        break;
+      case 5:
+        $scope.heroes.maxAllowed = 6;
+        $scope.villains.maxAllowed = 4;
+        $scope.henchmen.maxAllowed = 2;
+        $scope.bystanders.maxAllowed = 12;
+        break;
+    }
+  }
 });

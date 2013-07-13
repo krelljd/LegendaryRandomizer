@@ -7,9 +7,12 @@ app.service('Marvel', function () {
    $scope.heroes = res.data;
    });*/
 
+  Marvel.playerCount = {};
+  Marvel.playerCount.options = [2,3,4,5];
+  Marvel.playerCount.selected = 4;
+
   Marvel.expansions = {};
-  Marvel.expansions.darkcity =
-  {
+  Marvel.expansions.darkcity = {
     "name": "Dark City",
     "available": false
   };
@@ -147,7 +150,7 @@ app.service('Marvel', function () {
       }
     ];
   Marvel.heroes.selected = [];
-  Marvel.heroes.maxAllowed = 6;
+  Marvel.heroes.maxAllowed = 5;
 
   Marvel.masterminds = {};
   Marvel.masterminds.available =
@@ -320,7 +323,7 @@ app.service('Marvel', function () {
       }
     ];
   Marvel.villains.selected = [];
-  Marvel.villains.maxAllowed = 4;
+  Marvel.villains.maxAllowed = 3;
 
   Marvel.henchmen = {};
   Marvel.henchmen.available =
@@ -352,6 +355,9 @@ app.service('Marvel', function () {
     ];
   Marvel.henchmen.selected = [];
   Marvel.henchmen.maxAllowed = 2;
+
+  Marvel.bystanders = {};
+  Marvel.bystanders.maxAllowed = 8;
 
   return Marvel;
 });
