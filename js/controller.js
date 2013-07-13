@@ -35,6 +35,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   $scope.randomizeAll = function () {
     // call all selectRandomXxx methods
     this.selectRandomItems("schemes");
+
     this.selectRandomItems("masterminds");
     this.selectRandomItems("heroes");
     this.selectRandomItems("villains");
@@ -73,6 +74,12 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   };
 
   $scope.updateDecks = function () {
+    applyPlayerCountLogic();
+    applySchemeLogic();
+    //applyMastermindLogic();
+  };
+
+  function applyPlayerCountLogic() {
     var playerCount = $scope.playerCount.selected;
     switch (playerCount) {
       case 2:
@@ -98,6 +105,25 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
         $scope.villains.maxAllowed = 4;
         $scope.henchmen.maxAllowed = 2;
         $scope.bystanders.maxAllowed = 12;
+        break;
+    }
+  }
+
+  function applySchemeLogic() {
+    var scheme = $scope.schemes.selected;
+    switch (scheme.name) {
+      case "Negative Zone Prison Break":
+        $scope.henchmen.maxAllowed = $scope.henchmen.maxAllowed + 1;
+        break;
+      case "Replace Earth's Leaders with Killbots":
+        $scope.bystanders.maxAllowed = 18;
+        break;
+      case "Secret Invasion of the Skrull Shapeshifters":
+        // Skrull Villain Group required
+        //$scope.villains.selected
+        break;
+      case "Super Hero Civil War":
+        // Only 4 Heroes if there are 2 players playing.
         break;
     }
   }

@@ -16,6 +16,9 @@ nav,
 section {
   display: block;
 }
+details {
+  font-size: 80%;
+}
 audio,
 canvas,
 video {

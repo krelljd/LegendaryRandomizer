@@ -200,67 +200,131 @@ app.service('Marvel', function () {
     [
       {
         "name": "The Legacy Virus",
-        "expansion": ""
+        "expansion": "",
+        "setup": "8 Twists. Wound stack holds 6 Wounds per player.",
+        "specialRules": "",
+        "twist": "Each player reveals a TECH Hero or gains a Wound.",
+        "evilWins": "If the Wound stack runs out."
       },
       {
         "name": "Midtown Bank Robbery",
-        "expansion": ""
+        "expansion": "",
+        "setup": "8 Twists. 12 total Bystanders in the Villain Deck.",
+        "specialRules": "Each Villain gets +1 DMG for each Bystander it has.",
+        "twist": "Any Villain in the Bank captures 2 Bystanders. Then play the top card of the Villain Deck.",
+        "evilWins": "When 8 Bystanders are carried away by escaping Villains."
       },
       {
         "name": "Negative Zone Prison Breakout",
-        "expansion": ""
+        "expansion": "",
+        "setup": "8 Twists. Add an extra henchman group to the Villain Deck.",
+        "specialRules": "",
+        "twist": "Play the top 2 cards of the Villain Deck.",
+        "evilWins": "If 12 Villains escape."
       },
       {
         "name": "Portals to the Dark Dimension",
-        "expansion": ""
+        "expansion": "",
+        "setup": "7 Twists. Each Twist is a Dark Portal.",
+        "specialRules": "",
+        "twist": "Twist 1: Put the Dark Portal above the Mastermind. The Mastermind gets +1 DMG. Twists 2-6: Put the Dark Portal in the leftmost city space that doesn't yet have a Dark Portal. Villains in that city space get +1 DMG.",
+        "evilWins": "Twist 7 is played."
       },
       {
         "name": "Replace Earth's Leaders with Killbots",
-        "expansion": ""
+        "expansion": "",
+        "setup": "5 Twists. 3 additional Twists next to this Scheme. 18 total Bystanders in the Villain Deck.",
+        "specialRules": "Bystanders in the Villain Deck count as Killbot Villains with DMG equal to the number of Twists next to this Scheme.",
+        "twist": "Put the Twist next to this Scheme.",
+        "evilWins": "If 5 'Killbots' escape."
       },
       {
         "name": "Secret Invasion of the Skrull Shapeshifters",
-        "expansion": ""
+        "expansion": "",
+        "setup": "8 Twists. 6 Heroes. Skrull Villain Group required. Shuffle 12 random Heroes from the Hero Deck into the Villain Deck.",
+        "specialRules": "Heroes in the Villain Deck count as Skrull Villains with DMG equal to the Hero's COST+2. If you defeat that Hero, you gain it.",
+        "twist": "The highest cost Hero from the HQ moves into the Sewers as a Skrull Villain, as above.",
+        "evilWins": "If 6 Heroes get into the Escaped Villains pile."
       },
       {
         "name": "Super Hero Civil War",
-        "expansion": ""
+        "expansion": "",
+        "setup": "For 2-3 players, use 8 Twists. For 4-5 players, use 5 Twists. If only 2 players, use only 4 Heroes in the Hero Deck.",
+        "specialRules": "",
+        "twist": "KO all the Heroes in the HQ.",
+        "evilWins": "If the Hero Deck runs out."
       },
       {
         "name": "Unleash the Power of the Cosmic Cube",
-        "expansion": ""
+        "expansion": "",
+        "setup": "8 Twists.",
+        "specialRules": "",
+        "twist": "Put the Twist next to this Scheme. Twists 5-6: Each player gains a Wound. Twist 7: Each player gains 3 Wounds.",
+        "evilWins": "Twist 8 is played."
       },
       {
         "name": "Capture Baby Hope",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "Detonate the Helicarrier",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "Massive Earthquake Generator",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "Organized Crimewave",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "Save Humanity",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "Steal the Weaponized Plutonium",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "Transform Citizens into Demons",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       },
       {
         "name": "X-Cutioner's Song",
-        "expansion": "Dark City"
+        "expansion": "Dark City",
+        "setup": "",
+        "specialRules": "",
+        "twist": "",
+        "evilWins": ""
       }
     ];
   Marvel.schemes.selected = [];

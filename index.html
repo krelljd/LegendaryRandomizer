@@ -60,12 +60,27 @@
       <tr>
         <th colspan="2">Scheme</th>
       </tr>
-      <tr ng-repeat="scheme in schemes.selected | orderBy: 'name' | filter:filterExpansions" ng-animate="'fade'">
-        <td>{{scheme.name}}</td>
+      <!--<tr ng-repeat-start="scheme in schemes.selected | orderBy: 'name' | filter:filterExpansions">-->
+      <tr ng-repeat="scheme in schemes.selected | orderBy: 'name' | filter:filterExpansions">
+        <td>
+          {{scheme.name}}<br/>
+          <details>
+            <strong>Setup: </strong>{{ scheme.setup }}<br/>
+            <strong>Special Rules: </strong>{{ scheme.specialRules }}<br/>
+            <strong>Twist: </strong>{{ scheme.twist }}<br/>
+            <strong>Evil Wins: </strong>{{ scheme.evilWins }}
+          </details>
+        </td>
         <td class="right">
           <span class="label">{{ scheme.expansion }}</span>
         </td>
       </tr>
+      <!--<tr ng-repeat-end>
+        <td><strong>Setup: </strong>{{ scheme.setup }}</td>
+        <td><strong>Special Rules: </strong>{{ scheme.specialRules }}</td>
+        <td><strong>Twist: </strong>{{ scheme.twist }}</td>
+        <td><strong>Evil Wins: </strong>{{ scheme.evilWins }}</td>
+      </tr>-->
     </table>
   </div>
   <div class="span12">
@@ -208,7 +223,6 @@
           ng-click="selectRandomItems('masterminds')"><i class="icon-white icon-random"></i> Choose Mastermind
   </button>
 </div>
-
 <div class="row-fluid">
   <h2 class="span12">Heroes</h2>
 
@@ -244,7 +258,6 @@
           ng-click="selectRandomItems('heroes')"><i class="icon-white icon-random"></i> Choose Heroes
   </button>
 </div>
-
 <div class="row-fluid">
   <h2 class="span12">Villain Groups</h2>
 
@@ -280,7 +293,6 @@
           ng-click="selectRandomItems('villains')"><i class="icon-white icon-random"></i> Choose Villain Groups
   </button>
 </div>
-
 <div class="row-fluid">
   <h2 class="span12">Henchmen Groups</h2>
 
