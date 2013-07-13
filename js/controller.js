@@ -2,6 +2,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   // expansions
   $scope.playerCount = Marvel.playerCount;
   $scope.expansions = Marvel.expansions;
+  $scope.isSummaryDisplayed = false;
   $scope.bystanders = Marvel.bystanders;
 
   $scope.schemes = Marvel.schemes;
