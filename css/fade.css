@@ -20,6 +20,12 @@
   opacity: 0;
 }
 
+
+/* app specific changes */
 td.right {
   text-align: right !important;
+}
+
+.details {
+  font-size: 80%;
 }

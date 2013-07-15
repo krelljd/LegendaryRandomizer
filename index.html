@@ -64,12 +64,12 @@
       <tr ng-repeat="scheme in schemes.selected | orderBy: 'name' | filter:filterExpansions">
         <td>
           {{scheme.name}}<br/>
-          <details>
+          <span class="details">
             <strong>Setup: </strong>{{ scheme.setup }}<br/>
             <strong>Special Rules: </strong>{{ scheme.specialRules }}<br/>
             <strong>Twist: </strong>{{ scheme.twist }}<br/>
             <strong>Evil Wins: </strong>{{ scheme.evilWins }}
-          </details>
+          </span>
         </td>
         <td class="right">
           <span class="label">{{ scheme.expansion }}</span>
