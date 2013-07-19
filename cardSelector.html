@@ -1,0 +1,34 @@
+<div class="row-fluid">
+  <h2 class="span12">{{ title }}</h2>
+  <div class="span5">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th colspan="2">Available</th>
+      </tr>
+      <tr ng-repeat="item in list.available | orderBy: 'name' | filter:filter" ng-animate="'fade'">
+        <td ng-click="onSelect(item)">{{ item.name }}</td>
+        <td class="right">
+          <span class="label">{{ item.expansion }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="span6">
+    <table class="table table-selected table-striped-selected table-hover-selected">
+      <tr>
+        <th colspan="2">Selected</th>
+      </tr>
+      <tr ng-repeat="item in list.selected | orderBy: 'name' | filter:filter" ng-animate="'fade'">
+        <td ng-click="onRemove(item)">{{item.name}}</td>
+        <td class="right">
+          <span class="label">{{ item.expansion }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <button class="btn btn-block"
+          ng-class="{'disabled btn-inverse' : list.selected.length === list.maxAllowed,
+                       'btn-primary' : list.selected.length < list.maxAllowed}"
+          ng-click="onSelectRandom()"><i class="icon-white icon-random"></i> Choose {{ title }}
+  </button>
+</div>

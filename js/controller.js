@@ -11,35 +11,32 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   $scope.villains = Marvel.villains;
   $scope.henchmen = Marvel.henchmen;
 
-  $scope.selectItem = function (item, section) {
-    var list = $scope[section];
+  $scope.selectItem = function (item, list) {
     Helper.addSelected(item, list);
   };
 
-  $scope.removeItem = function (item, section) {
-    var list = $scope[section];
+  $scope.removeItem = function (item, list) {
     Helper.removeSelected(item, list);
   };
 
-  $scope.selectRandomItems = function (section) {
+  $scope.selectRandomItems = function (list) {
     do {
-      var random = Helper.getRandomInt(0, $scope[section].available.length - 1);
-      var item = $scope[section].available[random];
+      var random = Helper.getRandomInt(0, list.available.length - 1);
+      var item = list.available[random];
       if ($scope.filterExpansions(item)) {
-        $scope.selectItem(item, section);
+        $scope.selectItem(item, list);
       }
     }
-    while ($scope[section].selected.length < $scope[section].maxAllowed);
+    while (list.selected.length < list.maxAllowed);
   };
 
   $scope.randomizeAll = function () {
     // call all selectRandomXxx methods
-    this.selectRandomItems("schemes");
-
-    this.selectRandomItems("masterminds");
-    this.selectRandomItems("heroes");
-    this.selectRandomItems("villains");
-    this.selectRandomItems("henchmen");
+    this.selectRandomItems($scope.schemes);
+    this.selectRandomItems($scope.masterminds);
+    this.selectRandomItems($scope.heroes);
+    this.selectRandomItems($scope.villains);
+    this.selectRandomItems($scope.henchmen);
   };
 
   $scope.removeAll = function () {
