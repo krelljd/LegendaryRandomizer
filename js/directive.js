@@ -1,6 +1,6 @@
 app.directive('cardSelector', function () {
   return {
-    restrict: 'E',
+    restrict: 'EA',
     replace: true,
     scope: {
       title: '@',

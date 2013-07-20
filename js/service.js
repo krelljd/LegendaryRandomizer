@@ -8,7 +8,7 @@ app.service('Marvel', function () {
    });*/
 
   Marvel.playerCount = {};
-  Marvel.playerCount.options = [2,3,4,5];
+  Marvel.playerCount.options = [1,2,3,4,5];
   Marvel.playerCount.selected = 4;
 
   Marvel.expansions = {};
@@ -265,66 +265,66 @@ app.service('Marvel', function () {
       {
         "name": "Capture Baby Hope",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists. Put a token on this scheme to represent the baby Hope Summers.",
+        "specialRules": "The Villain with the baby gets +4 DMG. If you defeat the Villain, rescue the baby to your Victory Pile, until the next Twist. The baby is worth 6 VP at the end of the game. If a Villain escapes with the baby, stack a Twist next to the Mastermind and return the baby to the Scheme card.",
+        "twist": "If a Villain has the baby, that Villain escapes. Otherwise, the baby is captured by the closest Villain to the Villain Deck. (If there are no Villains, do nothing.)",
+        "evilWins": "When there are 3 Twists stacked next to the Mastermind."
       },
       {
         "name": "Detonate the Helicarrier",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists. 6 Heroes in the Hero Deck.",
+        "specialRules": "Whenever a Hero is KO'd from the HQ, turn that Hero face down on that HQ space, representing an explosion on the Helicarrier. When an HQ space has 6 explosions, that space is destroyed and cannot hold Heroes anymore.",
+        "twist": "Stack this Twist next to the Scheme. Then for each Twist in that stack, KO the leftmost Hero in the HQ and immediately refill that space.",
+        "evilWins": "When all HQ spaces are destroyed or the Hero Deck runs out."
       },
       {
         "name": "Massive Earthquake Generator",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists",
+        "specialRules": "None",
+        "twist": "Each player reveals a strength Hero or KOs the top card of their deck.",
+        "evilWins": "When the number of non grey Heroes in the KO pile is 3 times the number of players."
       },
       {
-        "name": "Organized Crimewave",
+        "name": "Organized Crime Wave",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists. Include 10 Maggia Goons as one of the Henchman Groups",
+        "specialRules": "Goons also have the ability 'Ambush: Play another card in the Villain Deck.'",
+        "twist": "Each Goon in the city escapes.  Shuffle all the Goons from the players' Victory Piles into the Villain Deck.",
+        "evilWins": "When 5 Goons escape."
       },
       {
         "name": "Save Humanity",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists. 24 Bystanders in the Hero Deck. (1 Player: 12 Bystanders in the Hero Deck)",
+        "specialRules": "You may spend 2 STAR to rescue a Bystander from the HQ.",
+        "twist": "KO all Bystanders in the HQ. Then each player reveals an Instinct Hero or KOs a Bystander from their Victory Pile.",
+        "evilWins": "When the number of Bystanders KO'd and/or carried off is 4 times the number of players."
       },
       {
         "name": "Steal the Weaponized Plutonium",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists representing Plutonium. Add an extra Villain Group.",
+        "specialRules": "This Plutonium is captured by the closest Villain to the Villain Deck. If there are no Villains in the city, KO this Plutonium. Either way, play another card from the Villain Deck.",
+        "twist": "Each Villain gets +1 DMG for each Plutonium it has. When a Villain with any Plutonium is defeated, shuffle that Plutonium back into the Villain Deck.",
+        "evilWins": "When 4 Plutonium have been carried off by Villains."
       },
       {
         "name": "Transform Citizens into Demons",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists. Villain Deck includes 14 extra Jean Grey cards and no Bystanders.",
+        "specialRules": "Stack 5 Bystanders face down next to the Scheme. Bystanders stacked here are 'Demon Goblin' Villains. They have 2 DMG. Players can fight these Demon Goblins to rescue them as Bystanders.",
+        "twist": "Each Jean Grey card counts as a 'Goblin Queen' Villain. It is worth 4 VP. It has DMG equal to its COST plus the number of Demon Goblins stacked next to the Scheme.",
+        "evilWins": "When 4 Goblin Queen cards escape."
       },
       {
         "name": "X-Cutioner's Song",
         "expansion": "Dark City",
-        "setup": "",
-        "specialRules": "",
-        "twist": "",
-        "evilWins": ""
+        "setup": "8 Twists. Villain Deck includes 14 cards for an extra Hero and no Bystanders.",
+        "specialRules": "Whenever you play a Hero from the Villain Deck, that Hero is captured by the closest enemy to the Villain Deck. Each Villain gets +2 DMG for each Hero it has. When you fight an enemy, gain all the Heroes captured from the Villain Deck.",
+        "twist": "KO all Heroes captured by enemies. Then play another card from the Villain Deck.",
+        "evilWins": "9 non grey Heroes are KO'd or carried off."
       }
     ];
   Marvel.schemes.selected = [];
@@ -432,13 +432,15 @@ app.factory('Helper', function () {
     addSelected: function (item, list) {
       // cannot select more than n selectedItems
       if (list.selected.length >= list.maxAllowed) {
-        return;
+        return false;
       }
       var index = list.available.indexOf(item);
       if (index > -1) {
         list.available.splice(index, 1);
         list.selected.push(item);
+        return true;
       }
+      return false;
     },
 
     removeSelected: function (item, list) {
