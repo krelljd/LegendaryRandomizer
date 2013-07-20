@@ -299,7 +299,7 @@ app.service('Marvel', function () {
         "expansion": "Dark City",
         "setup": "8 Twists. 24 Bystanders in the Hero Deck. (1 Player: 12 Bystanders in the Hero Deck)",
         "specialRules": "You may spend 2 STAR to rescue a Bystander from the HQ.",
-        "twist": "KO all Bystanders in the HQ. Then each player reveals an Instinct Hero or KOs a Bystander from their Victory Pile.",
+        "twist": "KO all Bystanders in the HQ. Then each player reveals an INSTINCT Hero or KOs a Bystander from their Victory Pile.",
         "evilWins": "When the number of Bystanders KO'd and/or carried off is 4 times the number of players."
       },
       {

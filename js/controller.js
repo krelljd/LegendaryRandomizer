@@ -120,6 +120,9 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
     if ($scope.schemes.selected.length > 0) {
       var scheme = $scope.schemes.selected[0];
       switch (scheme.name) {
+        case "Midtown Bank Robbery":
+          $scope.bystanders.maxAllowed = 12;
+          break;
         case "Negative Zone Prison Breakout":
           $scope.henchmen.maxAllowed = $scope.henchmen.maxAllowed + 1;
           break;
@@ -129,6 +132,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
         case "Secret Invasion of the Skrull Shapeshifters":
           // Skrull Villain Group required
           handleRequiredGroup("Skrulls", $scope.villains);
+          $scope.heroes.maxAllowed = 6;
           break;
         case "Super Hero Civil War":
           // Only 4 Heroes if there are 2 players playing.
