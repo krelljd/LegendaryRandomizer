@@ -128,13 +128,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
           break;
         case "Secret Invasion of the Skrull Shapeshifters":
           // Skrull Villain Group required
-          var skrulls = $scope.villains.available.filter(function (val) {
-            return (val.name === "Skrulls") ? val : null;
-          });
-          if (skrulls != null && skrulls.length > 0) {
-            $scope.villains.selected.pop();
-            $scope.selectItem(skrulls[0], $scope.villains);
-          }
+          handleRequiredGroup("Skrulls", $scope.villains);
           break;
         case "Super Hero Civil War":
           // Only 4 Heroes if there are 2 players playing.
@@ -147,14 +141,8 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
           $scope.heroes.maxAllowed = 6;
           break;
         case "Organized Crime Wave":
-          // Maggia Goons Villain Group required
-          var goons = $scope.villains.available.filter(function (val) {
-            return (val.name === "Maggia Goons") ? val : null;
-          });
-          if (goons != null && goons.length > 0) {
-            $scope.villains.selected.pop();
-            $scope.selectItem(goons[0], $scope.villains);
-          }
+          // Maggia Goons Henchmen Group required
+          handleRequiredGroup("Maggia Goons", $scope.henchmen);
           break;
         case "Save Humanity":
           // 12 Bystanders in Hero Deck for 1 player
@@ -192,6 +180,18 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
           }
         }
       }
+    }
+  }
+
+  function handleRequiredGroup(villainName, list) {
+    var villain = list.available.filter(function (val) {
+      return (val.name === villainName) ? val : null;
+    });
+    if (villain != null && villain.length > 0) {
+      if (list.selected.length === list.maxAllowed) {
+        list.selected.pop();
+      }
+      $scope.selectItem(villain[0], list);
     }
   }
 });
