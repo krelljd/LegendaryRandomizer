@@ -120,7 +120,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
     if ($scope.schemes.selected.length > 0) {
       var scheme = $scope.schemes.selected[0];
       switch (scheme.name) {
-        case "Negative Zone Prison Break":
+        case "Negative Zone Prison Breakout":
           $scope.henchmen.maxAllowed = $scope.henchmen.maxAllowed + 1;
           break;
         case "Replace Earth's Leaders with Killbots":
