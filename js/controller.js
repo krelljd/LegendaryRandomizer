@@ -185,7 +185,9 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
         if ($scope[deck].hasOwnProperty('selected') && $scope[deck].hasOwnProperty('available')) {
           if ($scope[deck].selected.length > $scope[deck].maxAllowed) {
             do {
-              $scope[deck].selected.pop();
+              var random = Helper.getRandomInt(0, $scope[deck].selected.length - 1);
+              var removed = $scope[deck].selected[random];
+              $scope.removeItem(removed, $scope[deck]);
             } while ($scope[deck].selected.length > $scope[deck].maxAllowed)
           }
         }
