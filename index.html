@@ -90,7 +90,12 @@
       </tr>
       <tr ng-repeat="mastermind in masterminds.selected | orderBy: 'name' | filter:filterExpansions"
           ng-animate="'fade'">
-        <td>{{mastermind.name}}</td>
+        <td>{{mastermind.name}}<br/>
+          <span class="details">
+            <span ng-show="mastermind.info.length > 0">{{ mastermind.info }}<br/></span>
+            <strong>Always Leads: </strong>{{ mastermind.leads }}<br/>
+            <strong>Master Strike: </strong>{{ mastermind.masterStrike }}
+          </span></td>
         <td class="right">
           <span class="label">{{ mastermind.expansion }}</span>
         </td>

@@ -76,7 +76,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   $scope.updateDecks = function () {
     applyPlayerCountLogic();
     applySchemeLogic();
-    //applyMastermindLogic();
+    applyMastermindLogic();
     reduceDecks();
   };
 
@@ -166,6 +166,50 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
           break;
         case "X-Cutioner's Song":
           $scope.bystanders.maxAllowed = 0;
+          break;
+      }
+    }
+  }
+
+  function applyMastermindLogic() {
+    if ($scope.masterminds.selected.length > 0) {
+      var mastermind = $scope.masterminds.selected[0];
+      switch (mastermind.name) {
+        case "Apocalypse":
+          // Four Horsemen Villain Group required
+          handleRequiredGroup("Four Horsemen", $scope.villains);
+          break;
+        case "Dr. Doom":
+          // Doombot Legion Henchmen Group required
+          handleRequiredGroup("Doombot Legion", $scope.henchmen);
+          break;
+        case "Kingpin":
+          // Streets of New York Villain Group required
+          handleRequiredGroup("Streets of New York", $scope.villains);
+          break;
+        case "Loki":
+          // Enemies of Asgard Villain Group required
+          handleRequiredGroup("Enemies of Asgard", $scope.villains);
+          break;
+        case "Magneto":
+          // Brotherhood Villain Group required
+          handleRequiredGroup("Brotherhood", $scope.villains);
+          break;
+        case "Mephisto":
+          // Underworld Villain Group required
+          handleRequiredGroup("Underworld", $scope.villains);
+          break;
+        case "Mr. Sinister":
+          // Marauders Villain Group required
+          handleRequiredGroup("Marauders", $scope.villains);
+          break;
+        case "Red Skull":
+          // Hydra Villain Group required
+          handleRequiredGroup("Hydra", $scope.villains);
+          break;
+        case "Stryfe":
+          // MLF Villain Group required
+          handleRequiredGroup("MLF", $scope.villains);
           break;
       }
     }
