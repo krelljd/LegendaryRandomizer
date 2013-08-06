@@ -1,4 +1,6 @@
 app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
+  'use strict';
+
   // expansions
   $scope.playerCount = Marvel.playerCount;
   $scope.expansions = Marvel.expansions;

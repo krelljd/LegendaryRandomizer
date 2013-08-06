@@ -1,4 +1,6 @@
 app.directive('cardSelector', function () {
+  'use strict';
+
   return {
     restrict: 'EA',
     replace: true,
@@ -7,7 +9,7 @@ app.directive('cardSelector', function () {
       list: '=',
       filter: '='
     },
-    link: function(scope, elm, attrs) {
+    link: function(scope) {
       scope.onSelect = function (item) {
         scope.$parent.selectItem(item, scope.list);
       };
