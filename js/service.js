@@ -484,7 +484,7 @@ app.service('Marvel', function () {
       },
       {
         "name": "Heralds of Galactus",
-        "expansion": "Fantasic Four"
+        "expansion": "Fantastic Four"
       },
       {
         "name": "Subterranea",
