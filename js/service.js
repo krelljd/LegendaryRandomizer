@@ -16,6 +16,10 @@ app.service('Marvel', function () {
     "name": "Dark City",
     "available": false
   };
+  Marvel.expansions.fantasticfour = {
+    "name" : "Fantastic Four",
+    "available": false
+  };
 
   Marvel.heroes = {};
   Marvel.heroes.available =
@@ -147,6 +151,26 @@ app.service('Marvel', function () {
       {
         "name": "Wolverine",
         "expansion": "Dark City"
+      },
+      {
+        "name": "Human Torch",
+        "expansion": "Fantastic Four"
+      },
+      {
+        "name": "Invisible Woman",
+        "expansion": "Fantastic Four"
+      },
+      {
+        "name": "Mr. Fantastic",
+        "expansion": "Fantastic Four"
+      },
+      {
+        "name": "Thing",
+        "expansion": "Fantastic Four"
+      },
+      {
+        "name": "Silver Surfer",
+        "expansion": "Fantastic Four"
       }
     ];
   Marvel.heroes.selected = [];
@@ -217,6 +241,20 @@ app.service('Marvel', function () {
         "leads": "MLF",
         "masterStrike": "Stack the Master Strike next to Stryfe. Stryfe gets +1 DMG for each Master Strike stacked next to him. Each player reveals an X-FORCE Hero or discards a card at random.",
         "info": ""
+      },
+      {
+        "name": "Galactus",
+        "expansion": "Fantastic Four",
+        "leads": "Heralds of Galactus",
+        "masterStrike": "Destroy the city space closest to Galactus. Any Villain there escapes. Put this Master Strike there.",
+        "info": "Cosmic Threat: STRENGTH, INSTINCT, STEALTH, TECH, RANGED. Galactus Wins: When the city is destroyed."
+      },
+      {
+        "name": "Mole Man",
+        "expansion": "Fantastic Four",
+        "leads": "Subterrantea",
+        "masterStrike": "All Subterranea Villains in the city escape. If any Villains escaped this way, each player gains a Wound.",
+        "info": "Mole Man gets +1 DMG for each Subterranea Villain that has escaped."
       }
     ];
   Marvel.masterminds.selected = [];
@@ -351,7 +389,39 @@ app.service('Marvel', function () {
         "setup": "8 Twists. Villain Deck includes 14 cards for an extra Hero and no Bystanders.",
         "specialRules": "Whenever you play a Hero from the Villain Deck, that Hero is captured by the closest enemy to the Villain Deck. Each Villain gets +2 DMG for each Hero it has. When you fight an enemy, gain all the Heroes captured from the Villain Deck.",
         "twist": "KO all Heroes captured by enemies. Then play another card from the Villain Deck.",
-        "evilWins": "9 non grey Heroes are KO'd or carried off."
+        "evilWins": "9 non-grey Heroes are KO'd or carried off."
+      },
+      {
+        "name": "Invincible Force Field",
+        "expansion": "Fantastic Four",
+        "setup": "7 Twists",
+        "specialRules": "To fight the Mastermind, you must also spend 1 STAR or 1 DMG for each Force Field next to them.",
+        "twist": "Stack this Twist next to the Mastermind as a 'Force Field.'",
+        "evilWins": "Twist 7."
+      },
+      {
+        "name": "Pull Reality Into The Negative Zone",
+        "expansion": "Fantastic Four",
+        "setup": "8 Twists",
+        "specialRules": "",
+        "twist": "2, 4, and 6: Until the next Twist, Enemies cost STAR to fight and Heroes cost DMG to recruit.",
+        "evilWins": "Twist 7."
+      },
+      {
+        "name": "Bathe Earth In Cosmic Rays",
+        "expansion": "Fantastic Four",
+        "setup": "6 Twists",
+        "specialRules": "",
+        "twist": "Each player in turn does the following: Reveal your hand. KO one of your non-grey heroes. Choose a Hero from the HQ with the same or lower cost and put it into your hand.",
+        "evilWins": "When the number of non-grey Heroes in the KO pile is six times the number of players."
+      },
+      {
+        "name": "Flood The Planet With Melted Glaciers",
+        "expansion": "Fantastic Four",
+        "setup": "8 Twists",
+        "specialRules": "Whenever you play a Hero from the Villain Deck, that Hero is captured by the closest enemy to the Villain Deck. Each Villain gets +2 DMG for each Hero it has. When you fight an enemy, gain all the Heroes captured from the Villain Deck.",
+        "twist": "Stack this Twist next to the Scheme as 'Rising Waters.' Then KO each Hero from the HQ whose cost is less than or equal to the number of Rising Waters in that stack.",
+        "evilWins": "When 20 non-grey Heroes are KO'd."
       }
     ];
   Marvel.schemes.selected = [];
@@ -411,6 +481,14 @@ app.service('Marvel', function () {
       {
         "name": "Underworld",
         "expansion": "Dark City"
+      },
+      {
+        "name": "Heralds of Galactus",
+        "expansion": "Fantasic Four"
+      },
+      {
+        "name": "Subterranea",
+        "expansion": "Fantastic Four"
       }
     ];
   Marvel.villains.selected = [];
