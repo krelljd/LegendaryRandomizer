@@ -54,14 +54,16 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
     }
 
     var expansions = $scope.expansions;
+    var showItem = false;
     for (var expansion in expansions) {
-      if (expansions.hasOwnProperty(expansion)) {
-        if (expansions[expansion].available == true) {
-          return (item.expansion === expansions[expansion].name);
+        if (expansions.hasOwnProperty(expansion)) {
+            if (expansions[expansion].available === true) {
+                showItem = (item.expansion === expansions[expansion].name);
+                if (showItem) { return true; }
+            }
         }
-      }
     }
-    return false;
+    return showItem;
   };
 
   $scope.toggleExpansion = function (item) {
