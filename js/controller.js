@@ -137,8 +137,8 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
           $scope.heroes.maxAllowed = 6;
           break;
         case "Super Hero Civil War":
-          // Only 4 Heroes if there are 2 players playing.
-          if ($scope.playerCount.selected === 2) {
+          // Only 4 Heroes if there are <= 2 players playing.
+          if ($scope.playerCount.selected <= 2) {
             $scope.heroes.maxAllowed = 4;
           }
           break;
@@ -213,6 +213,12 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
           // MLF Villain Group required
           handleRequiredGroup("MLF", $scope.villains);
           break;
+        case "Galactus":
+          //Heralds of Galactus Villain Group required
+          handleRequiredGroup("Heralds of Galactus", $scope.villains);
+        case "Mole Man":
+          //Subterranea Villain Group required
+          handleRequiredGroup("Subterranea", $scope.villains);
       }
     }
   }
