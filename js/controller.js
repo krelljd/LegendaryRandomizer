@@ -218,9 +218,11 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
         case "Galactus":
           //Heralds of Galactus Villain Group required
           handleRequiredGroup("Heralds of Galactus", $scope.villains);
+          break;
         case "Mole Man":
           //Subterranea Villain Group required
           handleRequiredGroup("Subterranea", $scope.villains);
+          break;
       }
     }
   }
@@ -234,7 +236,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
               var random = Helper.getRandomInt(0, $scope[deck].selected.length - 1);
               var removed = $scope[deck].selected[random];
               $scope.removeItem(removed, $scope[deck]);
-            } while ($scope[deck].selected.length > $scope[deck].maxAllowed)
+            } while ($scope[deck].selected.length > $scope[deck].maxAllowed);
           }
         }
       }
@@ -245,7 +247,7 @@ app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
     var villain = list.available.filter(function (val) {
       return (val.name === villainName) ? val : null;
     });
-    if (villain != null && villain.length > 0) {
+    if (villain !== null && villain.length > 0) {
       if (list.selected.length === list.maxAllowed) {
         list.selected.pop();
       }
