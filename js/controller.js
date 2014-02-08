@@ -1,4 +1,4 @@
-app.controller('MarvelCtrl', function ($scope, Marvel, Helper) {
+angular.module('legendary').controller('MarvelCtrl', function ($scope, Marvel, Helper) {
   'use strict';
 
   // expansions

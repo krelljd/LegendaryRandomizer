@@ -1,4 +1,4 @@
-app.directive('cardSelector', function () {
+angular.module('legendary').directive('cardSelector', function () {
   'use strict';
 
   return {
@@ -23,5 +23,5 @@ app.directive('cardSelector', function () {
       };
     },
     templateUrl: '/cardSelector.html'
-  }
+  };
 });

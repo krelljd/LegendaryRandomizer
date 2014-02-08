@@ -1,1 +1,1 @@
-var app = angular.module("app", ['ui.bootstrap']);
+angular.module('legendary', ['ui.bootstrap']);

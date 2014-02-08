@@ -1,4 +1,5 @@
-app.service('Marvel', function () {
+angular.module('legendary').service('Marvel', function () {
+  'use strict';
   var Marvel = {};
 
   /* TODO: change when not running in development
@@ -531,7 +532,8 @@ app.service('Marvel', function () {
   return Marvel;
 });
 
-app.factory('Helper', function () {
+angular.module('legendary').factory('Helper', function () {
+  'use strict';
 
   return {
     addSelected: function (item, list) {
